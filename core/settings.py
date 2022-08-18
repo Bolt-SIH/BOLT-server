@@ -18,6 +18,16 @@ DEBUG = env('DEBUG')
 ALLOWED_HOSTS = env("ALLOWED_HOSTS").split(",")
 
 
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   }
+}
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -31,18 +41,22 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
 
     'allauth',
-    
+    'allauth.account',
+    'allauth.socialaccount',
 
-    'rest_framework.authtoken',
+    'rest_framework.authtoken', # For authentication.
     'rest_framework',
 
-    'drf_yasg2',
+    'drf_yasg2', # For APIs
+    
+    'users',
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-    ]
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication','rest_framework.authentication.SessionAuthentication'
+    ),
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',)
 }
 
 MIDDLEWARE = [
@@ -90,6 +104,8 @@ DATABASES = {
 
 
 
+AUTH_USER_MODEL = 'users.User'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -107,6 +123,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+
+
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'users.serializers.RegisterSerializer',
+}
 
 
 
