@@ -91,6 +91,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
+MEDIA_URL = '/image/'
+MEDIA_ROOT = BASE_DIR / 'image'
 
 DATABASES = {
     'default': {

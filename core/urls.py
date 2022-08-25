@@ -1,10 +1,13 @@
 from django.contrib import admin
 from django.urls import path,include
-
+# from django.conf.urls import url
 
 from rest_framework import permissions, authentication
 from drf_yasg2.views import get_schema_view
 from drf_yasg2 import openapi
+from django.views.static import serve
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 schema_view = get_schema_view(
@@ -27,3 +30,10 @@ urlpatterns = [
     path('auth/registration/', include('dj_rest_auth.registration.urls')),
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
+
+
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+else:
+    urlpatterns += [url(r'^image/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT})]
