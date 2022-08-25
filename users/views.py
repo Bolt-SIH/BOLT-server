@@ -56,7 +56,7 @@ def user_check(request):
         type=openapi.TYPE_OBJECT, 
         properties={
             'age_bracket': openapi.Schema(type=openapi.TYPE_STRING, description='Add the age bracket'),
-            'prefs': openapi.Schema(type= openapi.TYPE_STRING, items = openapi.TYPE_STRING, description='Add the user prefs'),
+            'prefs': openapi.Schema(type= openapi.TYPE_STRING, description='Add the user prefs'),
    
         }
     )
