@@ -33,7 +33,7 @@ def fetch_articles(request):
         "title": i.title,
         "description": i.description,
         "url": i.sourceURL,
-        "urlToImage": request.build_absolute_uri(i.image.url),
+        "urlToImage": request.build_absolute_uri(i.image.url).replace("images/images" , "images/"),
         "publishedAt": None,
         "content": i.description
         },) 
