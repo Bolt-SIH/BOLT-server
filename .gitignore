@@ -87,6 +87,11 @@ staticfiles
 *.sqlite3
 .idea/
 
+# Ignore all images
+*.jpg
+*.jpeg
+*.png
+
 # nginx
 ssl/
 *.key

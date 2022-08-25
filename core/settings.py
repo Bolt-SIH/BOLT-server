@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'drf_yasg2', # For APIs
     
     'users',
+    'content',
 ]
 
 REST_FRAMEWORK = {
