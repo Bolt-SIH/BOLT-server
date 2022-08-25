@@ -24,7 +24,7 @@ class Article(models.Model):
     image = models.ImageField(upload_to="article/",null = True , blank = True , height_field=None, width_field=None, max_length=None)
     description = models.TextField(blank= True , null = True)
 
-    tags = models.ManyToManyField(Category, blank = True , null = True);
+    tags = models.ManyToManyField(Category, blank = True );
 
     class Meta:
         verbose_name = ("Article")
@@ -43,7 +43,7 @@ class news(models.Model):
     image = models.ImageField(upload_to="article/",null = True , blank = True , height_field=None, width_field=None, max_length=None)
     description = models.TextField(blank= True , null = True)
 
-    tags = models.ManyToManyField(Category, blank = True , null = True);
+    tags = models.ManyToManyField(Category, blank = True );
 
     class Meta:
         verbose_name = ("News")
@@ -61,7 +61,7 @@ class books(models.Model):
     image = models.ImageField(upload_to="article/",null = True , blank = True , height_field=None, width_field=None, max_length=None)
     description = models.TextField(blank= True , null = True)
 
-    tags = models.ManyToManyField(Category, blank = True , null = True);
+    tags = models.ManyToManyField(Category, blank = True );
 
     class Meta:
         verbose_name = ("Book")

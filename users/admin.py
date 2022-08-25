@@ -5,17 +5,10 @@ from django.contrib.auth.admin import UserAdmin
 
 
 class CustomUserAdmin(UserAdmin):
-
-    # actions = [download_csv,]
-
-    # fieldsets = UserAdmin.fieldsets + (
-    #     (None, {'fields': ("user_type",  "phone","ios" , "ios_id", "bharatx_verified", "uuid", "augmont_user", "augmont_bank", "upi", "user_preference", "profile_url","device_id","device_id_dict", 
-    #     "name", "gender", "aadhaar_number")}),
-    # )
-    # add_fieldsets = UserAdmin.add_fieldsets + (
-    #     (None, {'fields': ("user_type", "phone", "uuid", "augmont_user", "augmont_bank", "upi", "user_preference", "profile_url","device_id" , "device_id_dict", 
-    #     "name", "gender", "aadhaar_number")}),
-    # )
+    
+    fieldsets = UserAdmin.fieldsets + (
+        (None, {'fields': ("age_bracket" , "streak_count" , "streak_day" , "profile_url" , "user_preference")}),
+    )
 
     list_display = ("username" ,"first_name" ,"email","date_joined")
 

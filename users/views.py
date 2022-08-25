@@ -1,8 +1,3 @@
-from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
-from django.shortcuts import render, redirect, HttpResponseRedirect
-from django.urls import reverse
-from django.contrib.auth import authenticate, login, logout
 
 from drf_yasg2 import openapi
 from drf_yasg2.utils import swagger_auto_schema
@@ -17,6 +12,8 @@ from rest_framework.decorators import api_view, authentication_classes, permissi
 
 
 from users import models as users_models
+from content import models as ContentModels
+
 
 from utils import responses
 # Create your views here.
@@ -50,3 +47,36 @@ def user_check(request):
         return response.Response(data, status.HTTP_200_OK)
     except:
         return response.Response(data, status.HTTP_200_OK)
+
+
+@swagger_auto_schema(
+    method="POST",
+    responses=responses.GET_RESPONSES,
+    request_body=openapi.Schema(
+        type=openapi.TYPE_OBJECT, 
+        properties={
+            'age_bracket': openapi.Schema(type=openapi.TYPE_STRING, description='Add the age bracket'),
+            'prefs': openapi.Schema(type= openapi.TYPE_ARRAY, items = openapi.TYPE_STRING, description='Add the user prefs'),
+   
+        }
+    )
+)
+@api_view(['POST'])
+# @decorators.try_except
+@permission_classes([permissions.IsAuthenticated])
+def userPrefs(request):
+    age_bracket = request.data.get("age_bracket" , None)
+    prefs = request.data.get("prefs" , None)
+    user = users_models.User.objects.get(id = request.user.id)
+    
+    if(age_bracket):
+        user.age_bracket = age_bracket
+    
+    if(prefs):
+        for i in prefs:
+            user.user_preference.add(ContentModels.Category.objects.get(Category = i))
+    
+    
+    user.save()
+
+    return response.Response({"status" : True} , status.HTTP_200_OK)
