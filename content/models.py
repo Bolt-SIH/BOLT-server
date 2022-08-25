@@ -4,7 +4,7 @@ from django.db import models
 class Category(models.Model):
     Category = models.CharField(max_length=32, help_text="StartUp")
     AGE_CHOICES = (
-    ('12-17', '12-17'),   # Mandate initiated
+    ('12-16', '12-16'),   # Mandate initiated
     ('17-24' , '17-24'),
     ('24+', '24+'),   # Mandate successfully created
     )
