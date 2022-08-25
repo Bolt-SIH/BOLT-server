@@ -6,7 +6,8 @@ class Category(models.Model):
     AGE_CHOICES = (
     ('12-16', '12-16'),   # Mandate initiated
     ('17-24' , '17-24'),
-    ('24+', '24+'),   # Mandate successfully created
+    ('24+', '24+'), 
+    ('All' , "All")  # Mandate successfully created
     )
     status = models.CharField(
         max_length=32, choices=AGE_CHOICES, default='PENDING')
