@@ -7,4 +7,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 admin.site.register(models.Article)
+admin.site.register(models.news)
+
+admin.site.register(models.books)
 admin.site.register(models.Category , CategoryAdmin)
