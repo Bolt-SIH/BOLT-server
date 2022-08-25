@@ -27,10 +27,7 @@ def fetch_articles(request):
     "totalResults": 2,
     "articles": [
     {
-    "source": {
-    "id": None,
-    "name": "The Star Online"
-    },
+    "source": "The Star Online",
     "author": "Glenn CHAPMAN",
     "title": "Elon Musk lawyers seize on Twitter whistleblower revelations",
     "description": "Elon Musk’s lawyers jumped Aug 24 on the revelations of a Twitter whistleblower to try to force the platform to surrender vast amounts of information for their fight to cancel the billionaire’s buyout bid. Read full story",
@@ -40,10 +37,7 @@ def fetch_articles(request):
     "content": "SAN FRANCISCO: Elon Musks lawyers jumped Aug 24 on the revelations of a Twitter whistleblower to try to force the platform to surrender vast amounts of information for their fight to cancel the billi… [+2991 chars]"
     },
     {
-    "source": {
-    "id": None,
-    "name": "The Star Online"
-    },
+    "source": "The Star Online",
     "author": "Glenn CHAPMAN",
     "title": "Elon Musk lawyers seize on Twitter whistleblower revelations",
     "description": "Elon Musk’s lawyers jumped Aug 24 on the revelations of a Twitter whistleblower to try to force the platform to surrender vast amounts of information for their fight to cancel the billionaire’s buyout bid. Read full story",
@@ -53,10 +47,7 @@ def fetch_articles(request):
     "content": "SAN FRANCISCO: Elon Musks lawyers jumped Aug 24 on the revelations of a Twitter whistleblower to try to force the platform to surrender vast amounts of information for their fight to cancel the billi… [+2991 chars]"
     },
     {
-    "source": {
-    "id": None,
-    "name": "The Star Online"
-    },
+    "source": "The Star Online",
     "author": "Glenn CHAPMAN",
     "title": "Elon Musk lawyers seize on Twitter whistleblower revelations",
     "description": "Elon Musk’s lawyers jumped Aug 24 on the revelations of a Twitter whistleblower to try to force the platform to surrender vast amounts of information for their fight to cancel the billionaire’s buyout bid. Read full story",
@@ -66,10 +57,7 @@ def fetch_articles(request):
     "content": "SAN FRANCISCO: Elon Musks lawyers jumped Aug 24 on the revelations of a Twitter whistleblower to try to force the platform to surrender vast amounts of information for their fight to cancel the billi… [+2991 chars]"
     },
     {
-    "source": {
-    "id": None,
-    "name": "The Star Online"
-    },
+    "source" : "The Star Online",
     "author": "Glenn CHAPMAN",
     "title": "Elon Musk lawyers seize on Twitter whistleblower revelations",
     "description": "Elon Musk’s lawyers jumped Aug 24 on the revelations of a Twitter whistleblower to try to force the platform to surrender vast amounts of information for their fight to cancel the billionaire’s buyout bid. Read full story",
