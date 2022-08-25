@@ -71,10 +71,13 @@ def userPrefs(request):
     
     if(age_bracket):
         user.age_bracket = age_bracket
-    
+    print(len(eval(prefs)))
     if(eval(prefs)):
-        for i in prefs:
-            user.user_preference.add(ContentModels.Category.objects.get(Category = i))
+        for i in eval(prefs):
+            cat = ContentModels.Category.objects.filter(Category = i)
+            print(cat)
+            if(cat):
+                user.user_preference.add(cat[0])
     
     
     user.save()
