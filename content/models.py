@@ -46,8 +46,8 @@ class news(models.Model):
     tags = models.ManyToManyField(Category, blank = True , null = True);
 
     class Meta:
-        verbose_name = ("Article")
-        verbose_name_plural = ("Articles")
+        verbose_name = ("News")
+        verbose_name_plural = ("News")
 
     def __str__(self):
         return self.title
@@ -64,8 +64,8 @@ class books(models.Model):
     tags = models.ManyToManyField(Category, blank = True , null = True);
 
     class Meta:
-        verbose_name = ("Article")
-        verbose_name_plural = ("Articles")
+        verbose_name = ("Book")
+        verbose_name_plural = ("Books")
 
     def __str__(self):
         return self.title
