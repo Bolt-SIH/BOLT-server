@@ -56,7 +56,7 @@ def user_check(request):
         type=openapi.TYPE_OBJECT, 
         properties={
             'age_bracket': openapi.Schema(type=openapi.TYPE_STRING, description='Add the age bracket'),
-            'prefs': openapi.Schema(type= openapi.TYPE_ARRAY, items = openapi.TYPE_STRING, description='Add the user prefs'),
+            'prefs': openapi.Schema(type= openapi.TYPE_STRING, items = openapi.TYPE_STRING, description='Add the user prefs'),
    
         }
     )
@@ -72,7 +72,7 @@ def userPrefs(request):
     if(age_bracket):
         user.age_bracket = age_bracket
     
-    if(prefs):
+    if(eval(prefs)):
         for i in prefs:
             user.user_preference.add(ContentModels.Category.objects.get(Category = i))
     
