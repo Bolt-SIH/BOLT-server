@@ -80,4 +80,4 @@ class CrousalImage(models.Model):
         verbose_name_plural = ("CrousalImages")
 
     def __str__(self):
-        return self.name
+        return self.pk
