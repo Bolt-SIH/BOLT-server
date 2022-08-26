@@ -49,7 +49,7 @@ def fetch_books(request):
 @api_view(['GET'])
 # @decorators.try_except
 @permission_classes([])
-def fetch_books(request):
+def CrousalImage(request):
     # Dummy data
     CrousalImageModel = models.CrousalImage.objects.all()
     data = []
