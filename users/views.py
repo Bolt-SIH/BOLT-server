@@ -83,3 +83,16 @@ def userPrefs(request):
     user.save()
 
     return response.Response({"status" : True} , status.HTTP_200_OK)
+
+
+
+
+@swagger_auto_schema(
+    method="GET",
+    responses=responses.GET_RESPONSES,
+    
+)
+@api_view(['GET'])
+def CourseOnBoarded(request):
+    data = {"CourseOnBoarded" : request.user.courseOnBoarded}
+    return response.Response(data , status.HTTP_200_OK)

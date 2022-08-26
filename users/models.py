@@ -32,6 +32,7 @@ class User(AbstractUser):
 
     profile_url = models.CharField(max_length=1024, blank=True, null=True, default= "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png")
     user_preference = models.ManyToManyField("content.Category" , blank=True)
+    courseOnBoarded = models.BooleanField(default=False)
 
     def __unicode__(self):
         return f"{self.first_name} {self.last_name}"
