@@ -74,11 +74,10 @@ class books(models.Model):
 
 class CrousalImage(models.Model):
     image = models.ImageField(upload_to="crousal/",null = True , blank = True , height_field=None, width_field=None, max_length=None)
-    
 
     class Meta:
-        verbose_name = _("CrousalImage")
-        verbose_name_plural = _("CrousalImages")
+        verbose_name = ("CrousalImage")
+        verbose_name_plural = ("CrousalImages")
 
     def __str__(self):
         return self.name
