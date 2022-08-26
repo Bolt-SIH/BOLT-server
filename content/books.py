@@ -24,15 +24,39 @@ from content import models
 @permission_classes([])
 def fetch_books(request):
     # Dummy data
-    Books_Model = models.books.objects.all()
+    CrousalImageModel = models.books.objects.all()
     data = []
-    for i in Books_Model:
+    for i in CrousalImageModel:
         data.append(
             {
             "urlToImage": request.build_absolute_uri(i.image.url).replace("images/images" , "images/"),
             "title": i.title,
             "author" : i.author,
             "description": i.description
+            },
+        ) 
+
+
+    return response.Response(data , status.HTTP_200_OK)
+
+
+
+@swagger_auto_schema(
+    method="GET",
+    responses=responses.GET_RESPONSES,
+    
+)
+@api_view(['GET'])
+# @decorators.try_except
+@permission_classes([])
+def fetch_books(request):
+    # Dummy data
+    CrousalImageModel = models.CrousalImage.objects.all()
+    data = []
+    for i in CrousalImageModel:
+        data.append(
+            {
+            "url": request.build_absolute_uri(i.image.url).replace("images/images" , "images/"),
             },
         ) 
 

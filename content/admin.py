@@ -1,3 +1,5 @@
+from pyexpat import model
+from statistics import mode
 from django.contrib import admin
 from content import models
 # Register your models here.
@@ -10,4 +12,5 @@ admin.site.register(models.Article)
 admin.site.register(models.news)
 
 admin.site.register(models.books)
+admin.site.register(models.CrousalImage)
 admin.site.register(models.Category , CategoryAdmin)

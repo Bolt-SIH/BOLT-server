@@ -72,3 +72,13 @@ class books(models.Model):
         return self.title
 
 
+class CrousalImage(models.Model):
+    image = models.ImageField(upload_to="crousal/",null = True , blank = True , height_field=None, width_field=None, max_length=None)
+    
+
+    class Meta:
+        verbose_name = _("CrousalImage")
+        verbose_name_plural = _("CrousalImages")
+
+    def __str__(self):
+        return self.name
