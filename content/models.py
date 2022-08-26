@@ -56,6 +56,7 @@ class news(models.Model):
 
 class books(models.Model):
     title = models.CharField( max_length=1000 , null = True , blank= True)
+    author = models.CharField( max_length=1000 , null = True , blank= True)
     source = models.CharField( max_length=100 , blank= True , null = True)
     sourceURL = models.URLField( max_length=500 , null = True ,  blank = True)
     image = models.ImageField(upload_to="article/",null = True , blank = True , height_field=None, width_field=None, max_length=None)
