@@ -7,7 +7,7 @@ from django.contrib.auth.admin import UserAdmin
 class CustomUserAdmin(UserAdmin):
     
     fieldsets = UserAdmin.fieldsets + (
-        (None, {'fields': ("age_bracket" , "streak_count" , "streak_day" , "profile_url" , "user_preference" ,"courseOnBoarded")}),
+        (None, {'fields': ("age_bracket" , "streak_count" , "streak_day" , "profile_url" , "user_preference" ,"courseOnBoarded" , "currentWPM")}),
     )
 
     list_display = ("username" ,"first_name" ,"email","date_joined")
